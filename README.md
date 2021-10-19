@@ -1,3 +1,5 @@
+![Pitch1](https://github.com/Noarrrr/UQ-DECO3500-T35/blob/pic_research/pitch1.jpg?raw=true)
+
 # UQ-DECO3500-T35
 1. Poster
 
