@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Userinformation</title>
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/rescue.css">
+<link rel="stylesheet" href="css/style.css">
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="">
+    <div class="">
+      <div class="row" id="map">
+        <a href="Shelter1Comments.html" id="back">
+            <button type="button" class="btn btn btn-light btn-default backbutton" aria-label="Left Align">
+              <svg class="bi bi-chevron-compact-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+              </svg>
+          </button>
+        </a>
+    </div>
+      <div class="profile">
+        <div style="text-align: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+          </svg>
+          <h1>[Name]</h1>
+        </div>
+       
+        <form class="loginPannel" method="post" action="#" onsubmit="return null">
+          <ul>
+            <li>
+              <input type="text" class="Address validate inputchang hidden" rule="Address" value="Address"
+                 name="Address" style="color: rgb(204, 204, 204);"/>
+                <span id="addressSpan">Address</span>
+              </li>
+            <li>
+              <input type="text" class="Number validate inputchang hidden" rule="Number" value="Contact Number" dvalue="Contact Number"
+                name="Number" style="color: rgb(204, 204, 204);"/>
+                <span id="numberSpan" >Contact Number</span>
+              </li>
+            <li><input  value="Update" class="submit" id="updateButton"></li>
+          </ul>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+    <script>
+      let showInput = false;
+      document.getElementById("updateButton").addEventListener("click",()=>{
+        if(!showInput){
+          $("#addressSpan").addClass("hidden")
+          $("#numberSpan").addClass("hidden")
+          $(".Address").removeClass("hidden")
+          $(".Number").removeClass("hidden")
+          showInput = true;
+        }else{
+          $("#addressSpan").removeClass("hidden")
+          $("#numberSpan").removeClass("hidden")
+          $(".Address").addClass("hidden")
+          $(".Number").addClass("hidden")
+          $("#addressSpan").text( $(".Address").val())
+          $("#numberSpan").text( $(".Number").val())
+          showInput = false; 
+        }
+
+        
+      })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <!-- <link rel="stylesheet" href="css/asking.css"> -->
+    <link rel="stylesheet" href="css/rescue.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet prefetch' href='http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='css/animate.min.css'>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    body, html{width: 100%;height: 100%;margin:0;font-family:"Poppins-Regular";}
+    #allmap {height: 500px;width:100%;overflow: hidden;}
+    #result {width:100%;font-size:12px;}
+    dl,dt,dd,ul,li{
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+    dt{
+        font-size:14px;
+        font-family:"Poppins-Regular";
+        font-weight:bold;
+        border-bottom:1px dotted #000;
+        padding:5px 0 5px 5px;
+        margin:5px 0;
+    }
+    dd{
+        padding:5px 0 0 5px;
+    }
+    li{
+        line-height:28px;
+    }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2GUwIuVBHSAwbEn9eTkVv5dUh5SnMG56"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>  
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+    <title>Shelter1</title>
+</head>
+<body style="background-color: white;">
+    <div id="allmap">   
+    </div>
+    <div id="result">
+        <span id="load_geolocation" style="">Check My Location</span>  
+    </div>
+<script type="text/javascript">
+
+$(function(){  
+    $("#load_geolocation").click(function(ev){  
+        $(ev.currentTarget).text("Checking......");  
+        //创建百度地图控件  
+        var geolocation = new BMap.Geolocation();  
+        geolocation.getCurrentPosition(function(r){  
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){  
+                //以指定的经度与纬度创建一个坐标点  
+                var pt = new BMap.Point(r.point.lng,r.point.lat);  
+                //创建一个地理位置解析器  
+                var geoc = new BMap.Geocoder();  
+                geoc.getLocation(pt, function(rs){//解析格式：城市，区县，街道  
+                    var addComp = rs.addressComponents;  
+                    $(ev.currentTarget).text(addComp.city + ", " + addComp.district + ", " + addComp.street);  
+                });      
+            }  
+            else {  
+                $(ev.currentTarget).text('Locating Fail');  
+            }          
+        },{enableHighAccuracy: true})//指示浏览器获取高精度的位置，默认false  
+    });  
+}); 
+    // 百度地图API功能
+    var map = new BMap.Map('allmap');
+    var poi = new BMap.Point(153.013597,-27.497411);
+    map.centerAndZoom(poi, 16);
+    map.enableScrollWheelZoom();
+
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">'  +
+                    'Address: Pizza Caffe<br/>Contact Number：(010)59928888<br/>Type：Food Supply' +
+                  '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+            title  : "Shelter1",      //标题
+            width  : 290,             //宽度
+            height : 105,              //高度
+            panel  : "panel",         //检索结果面板
+            enableAutoPan : true,     //自动平移
+            searchTypes   :[
+                BMAPLIB_TAB_SEARCH,   //周边检索
+                BMAPLIB_TAB_TO_HERE,  //到这里去
+                BMAPLIB_TAB_FROM_HERE //从这里出发
+            ]
+        });
+    var marker = new BMap.Marker(poi); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    marker.addEventListener("click", function(e){
+        searchInfoWindow.open(marker);
+    })
+    map.addOverlay(marker); //在地图中添加marker
+</script>
+    <div class="container">
+        <div class="col-sm-4 col-sm-offset-4">
+
+            
+
+            <div class="row" id="list">
+                <a  href="#" > 
+                    <img class="col-xs-1" src="img/locate.png" alt="locate" id="locate">                    
+                    <div  class="col-xs-8" id="middle">
+                        <div class="row" onclick="searchInfoWindow.open(marker);">
+                            <p class="col-xs-7">Shelter 1</p>
+                            <div class="col-xs-5">
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                            </div>
+                            
+                        </div>
+                        
+                        <p>There is a flood area, and some roads are washed away by flood. Click Navigate to see the safe route</p>
+                    </div>            
+                </a>
+                <button style="margin-left:20%;" onclick="Shelter1Nav.html"><a href="Shelter1Nav.html">Start Navigating</a></button>
+                <button style="margin-left:20%; margin-top: 5%;" onclick="Shelter1Comments.html"><a href="Shelter1Comments.html">Leave Comments</a></button>
+            </div>
+        
+        </div>     
+        
+
+    </div>
+        <div id='ss_menu' style="opacity: 0.9;">
+    <div><a href="Userinformation4.html"><img src="img/user2.png"></a> </div>
+    <div><a href="chatall.html"><img src="img/logo1.png"></a> </div>
+    <div><a href="shelter1_detail.html"><img src="img/list2.png"></a> </div>
+    <div><a href="index.html"><img src="img/shelter1.png"></a> </div>
+    <div class='menu'>
+        <div class='share' id='ss_toggle' data-rot='180'>
+            <div class='circle'></div>
+            <div class='bar'></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function (ev) {
+    var toggle = $('#ss_toggle');
+    var menu = $('#ss_menu');
+    var rot;
+    $('#ss_toggle').on('click', function (ev) {
+        rot = parseInt($(this).data('rot')) - 180;
+        menu.css('transform', 'rotate(' + rot + 'deg)');
+        menu.css('webkitTransform', 'rotate(' + rot + 'deg)');
+        if (rot / 180 % 2 == 0) {
+            toggle.parent().addClass('ss_active');
+            toggle.addClass('close');
+        } else {
+            toggle.parent().removeClass('ss_active');
+            toggle.removeClass('close');
+        }
+        $(this).data('rot', rot);
+    });
+    menu.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+        if (rot / 180 % 2 == 0) {
+            $('#ss_menu div i').addClass('ss_animate');
+        } else {
+            $('#ss_menu div i').removeClass('ss_animate');
+        }
+    });
+});
+</script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>   
+</body>
+</html>
