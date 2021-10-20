@@ -1,0 +1,50 @@
+.profile .title_tips {
+    padding: 1rem 0;
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+}
+.profile {
+    padding: 1.5rem;
+}
+ol, ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.profile li {
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+
+
+.validate {
+    color: #bebebe;
+    display: block;
+    width: 100%;
+    padding: 1.3rem 1rem 1.7rem;
+    font-size: 1.6rem;
+    border-bottom: solid 0.1rem #e8ebed;
+}
+input, textarea {
+    outline: none;
+    resize: none;
+    border: 0 none;
+    font-family: Helvetica Neue,Helvetica,Arial;
+}
+.profile li .submit {
+    display: block;
+    padding: 1rem 0;
+    text-align: center;
+    color: #ffffff;
+    background: #f85184;
+    font-size: 1.6rem;
+    width: 100%;
+    margin: 2rem auto;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}

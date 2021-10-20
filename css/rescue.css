@@ -1,0 +1,75 @@
+.container{
+    margin:0 auto; 
+    padding:0;     
+    
+}
+#map img{
+    width:100%;
+}
+
+#map{
+    position: relative;
+}
+img#float{
+    width:10%;    
+}
+
+#float{
+    position: absolute; 
+    top: 1%; 
+    right: 1%; 
+}
+
+#back{
+    position: absolute; 
+    top: 1%; 
+    left: 1%; 
+}
+
+#locate {
+    width:17%;
+}
+#portrait{
+    width:10%;
+    padding:0;
+    margin-left:5px;
+}
+
+#list{
+    padding:2%;
+}
+#list:hover {
+    background-color: rgb(240, 240, 240);
+    /* border:1px solid rgb(185, 185, 185); */
+  }
+
+
+#search,#filterline{
+    margin-top:2%;
+}
+
+#filter{
+    width:15%;
+}
+
+
+
+
+#list{
+    /* border: 1px solid blue; */
+    margin:0;
+}
+
+#portrait{
+    /* border: 1px solid blue; */
+    padding:0;
+    margin-left:5px;
+}
+
+#searchline{
+    margin-bottom: 3px;
+}
+
+/* .backbutton{
+    background-color:rgba(255, 255, 255, 0.527);
+} */
