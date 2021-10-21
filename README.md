@@ -1,11 +1,3 @@
-# Pitch
-
-![Pitch1](https://github.com/Noarrrr/UQ-DECO3500-T35/blob/pic_research/pitch1.jpg?raw=true)
-
-![Pitch4](https://github.com/Noarrrr/UQ-DECO3500-T35/blob/pic_research/pitch4.jpg?raw=true)
-
-![Pitch3](https://github.com/Noarrrr/UQ-DECO3500-T35/blob/pic_research/pitch3.jpg?raw=true)
-
 # UQ-DECO3500-T35
 ## Team & Project
 
