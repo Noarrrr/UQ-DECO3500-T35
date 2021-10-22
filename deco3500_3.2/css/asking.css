@@ -1,0 +1,117 @@
+.container{
+    margin-top:3%;   
+    /* border:1px solid blue; */
+    /* margin-bottom: 0; */
+}
+
+
+/* #address{
+    border:1px solid red;
+    text-overflow: ellipsis;
+} */
+
+#locateimg{
+    margin-left:3%;
+    width:15%;
+}
+
+#butnmap{
+    margin-left:2%;
+}
+
+ul{
+   /* border:1px solid blue; */
+   padding-left:0px;
+    margin-top: 5%;
+
+}
+#choose1 li,#choose2 li{
+    list-style-type:none;
+    /* background-color: rgb(214, 214, 214); */
+    border:1px solid grey;
+    margin-right:1%;   
+}
+
+
+li#sync{
+    border-style: none;
+    
+}
+
+#water,#food{
+    background-color: rgb(207, 0, 0);
+    color:white;
+}
+#weibo{
+    background-color: green;
+    color:white;
+}
+
+#disc{
+    width:90%;
+    height:50%;
+    margin-left:5%;
+        
+}
+
+.mybutton a {
+	display: inline-block;
+	background-color: rgb(14, 39, 177);
+	color: white;
+	text-decoration: none;
+	padding: 0.5em 1.5em;
+	border-radius: 3px;
+    margin-left:38%;
+    
+}
+.mapbutton a {
+	display: inline-block;
+	background-color: rgb(14, 39, 177);
+	color: white;
+	text-decoration: none;
+	padding: 0.5em 0.5em;
+	border-radius: 3px;       
+}
+
+#photo, #video{
+    width:55%;
+    margin-left:20%;    
+}
+
+.picborder{
+    border:2px solid rgb(219, 219, 219);
+    width: 40%;
+    margin:3%;
+    padding:10px;
+}
+#pandv{
+    margin:2%;
+}
+
+.barpic img{
+    width:70%;
+    padding-left:20%;
+    padding-bottom: 10%;
+    padding-top:25%;
+}
+.bartext{
+    padding-left:10%;
+}
+
+#metext{
+    padding-left:30%;
+}
+/* #ask{
+    border:1px solid red;
+} */
+
+#banner{
+    /* border:1px solid green; */
+    margin-top:5%;
+    padding-bottom: 1%;
+    background-color: rgb(233, 233, 233);
+}
+
+li{
+    padding:3px 0;
+}

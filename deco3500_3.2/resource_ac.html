@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <!-- <link rel="stylesheet" href="css/asking.css"> -->
+    <link rel="stylesheet" href="css/rescue.css">
+    <!-- <link rel="stylesheet" href="css/style.css">     -->
+
+    <title>Resource</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="row" id="map">
+                <img src="img/map02.jpg" alt="map">
+                <img src="img/user1.png" alt="" id="float">
+                <a href="resource.html" id="back">
+                    <button type="button" class="btn btn-default backbutton" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                  </button>
+                </a>
+            </div>
+            <div class="row" id="filterline">
+                <h5 class="col-xs-5">Resources </h5>
+                <div class="col-xs-5">
+                    <select class="form-control" name="jump" id="jump" onchange="jumpto('parent',this,0)">
+                        <option value="resource.html">by distance</option>                    
+                        <option value="resource_ac.html" selected>accommodation available</option>
+                        <option value="resource_pet.html">pets allowed</option>       
+                    </select>
+                    <script type="text/javascript"> 
+                        
+                        function jumpto(targ,selObj,restore){
+                        eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'"); 
+                        if (restore) selObj.selectedIndex=0; 
+                        } 
+                        
+                        </script> 
+                </div>
+                <img src="img/filter.png" alt="" class="col-xs-2" id="filter">
+            </div>
+            <div class="row" id="searchline">
+                <div class="form-group" id="search">
+                    <div class="col-xs-11">
+                        <input type="text" id="uname" class="form-control" placeholder="search">                                       
+                    </div>  
+                    <a href="search.html"><button type="button" class="btn btn-default col-xs-1" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button></a>               
+                </div>
+            </div>
+            <div class="row" id="list">
+                <a  href="#">            
+                    <img class="col-xs-1" src="img/locate.png" alt="locate" id="locate">
+                    <div  class="col-xs-8" id="middle">
+                        <div class="row">
+                            <p class="col-xs-7">Shelter A 0.6km</p>
+                            <div class="col-xs-5">
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+                            </div>
+                            
+                        </div>
+                        <p>Accommodate 100 people</p>
+                    </div>            
+                    <img class="col-xs-2" id="portrait" src="img/phone.png" alt="portrait">
+                </a>
+            </div>
+            <div class="row" id="list">
+                <a  href="#">  
+                    <img class="col-xs-1" src="img/locate.png" alt="locate" id="locate">
+                    
+                    <div  class="col-xs-8" id="middle">
+                        <div class="row">
+                            <p class="col-xs-7">Shelter B 3km</p>
+                            <div class="col-xs-5">
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+                            </div>
+                            
+                        </div>
+                        <p>Accommodate 200 people</p>
+                    </div>            
+                    <img class="col-xs-2" id="portrait" src="img/phone.png" alt="portrait">
+                </a>
+            </div>
+            <div class="row" id="list">
+                <a  href="#"> 
+                    <img class="col-xs-1" src="img/locate.png" alt="locate" id="locate">
+                    
+                    <div  class="col-xs-8" id="middle">
+                        <div class="row">
+                            <p class="col-xs-7">Shelter C 5.8km</p>
+                            <div class="col-xs-5">
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+                            </div>
+                            
+                        </div>
+                        <p>Accommodate 100 people</p>
+                    </div>            
+                    <img class="col-xs-2" id="portrait" src="img/phone.png" alt="portrait">
+                </a>
+            </div>            
+        
+        </div>
+        
+        
+
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>   
+</body>
+</html>
